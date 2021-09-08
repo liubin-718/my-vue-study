@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue.js test</title>
+    <style>
+      #demo {
+        font-family: 'Helvetica', Arial, sans-serif;
+      }
+      a {
+        text-decoration: none;
+        color: #f66;
+      }
+      li {
+        line-height: 1.5em;
+        margin-bottom: 20px;
+      }
+      .author, .date {
+        font-weight: bold;
+      }
+    </style>
+    <!-- Delete ".min" for console warnings in development -->
+    <script src="../../dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="demo">
+      <h2>Vue.js</h2>
+      <p v-if="foo">{{foo}}</p>
+      <button @click="handleClick">修改</button>
+    </div>
+    <script>
+      Vue.component('comp',{
+        render(h){
+          return h('div', '组件comp')
+        }
+      })
+
+      const app = new Vue({
+        el:'#demo',
+        data() {
+          return {
+            foo: 'foo',
+          };
+        },
+        methods:{
+          handleClick(){  
+            this.foo = '点击修改'
+          }
+        },
+      })
+      console.log(app.$options.render)
+
+    </script>
+  </body>
+</html>
