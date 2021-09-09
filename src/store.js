@@ -1,5 +1,5 @@
 import Vue from "vue";
-import Vuex from "vuex";
+import Vuex from "./mvuex";
 
 Vue.use(Vuex);
 
